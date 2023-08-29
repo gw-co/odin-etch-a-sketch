@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="title-text">
+        <h1>Etch-a-Sketch</h1>
+        <p>A simple pixel art-like project.</p>
+    </div>
+    <main>
+        <div class="controls">
+            <input id="color1" class="primary-color" type="color" value="#ff0000">
+            <input id="color2" class="primary-color" type="color" value="#00ff00">
+            <input id="color3" class="primary-color" type="color" value="#0000ff">
+            <div class="pixel-creator-div">
+            <input type="number" id="pixel-num" min="1" max="64">
+            <button class="pixel-button" onclick="create_pixels()">Clear</button>
+            </div>
+        </div>
+        <div class="pixels">
+            <!-- a sqaure grid of boxes created in script -->
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,111 @@
+
+body{
+    background-color: rgb(54, 54, 54);
+    box-sizing: border-box;
+    width: 600px;
+    height: 100vh;
+    margin: 0 auto;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    color: white;
+    font-size: 48px;
+}
+p{
+    color: white;
+    font-size: 20px;
+}
+
+main{
+    /* box-sizing: border-box; */
+    /* border: 1px solid magenta; */
+    height: 700px;
+    /* padding: 0; */
+}
+
+.controls{
+    box-sizing: border-box;
+    border: 1px solid yellow;
+    height: 100px;
+    padding: 10px 0;
+    flex: 0 0 auto;
+    display: flex;
+    gap: 4px;
+
+    .primary-color{
+        background-color: transparent;
+        width: 80px;
+        height: 80px;
+        padding: 0;
+        /* border-radius: 8px; */
+        border: 0;
+    }
+    .primary-color::-webkit-color-swatch{
+        border-radius: 40px;
+        border: 2px solid rgba(255, 255, 255, 0.501);
+    }
+    .pixel-creator-div{
+        box-sizing: border-box;
+        /* outline: 1px solid red; */
+        width: 100px;
+        margin-left: auto;
+
+        #pixel-num{
+            background-color: rgb(104, 104, 105);
+            color: white;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.289);
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            font-size: 28px;
+            flex: 0 0 auto;
+            box-sizing: border-box;
+        }
+        .pixel-button{
+            width: 100%;
+            height: 40px;
+            padding: 0 6px;
+            font-size: 28px;
+            border-radius: 10px;
+        }
+    }
+
+    /* #pixel-num::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+    } */
+}
+
+.pixels{
+    box-sizing: border-box;
+    background-color: rgb(172, 172, 172);
+    /* border: 1px solid blue; */
+    height: 600px;
+
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+
+    .pixel-row{
+        flex: 1 0 auto;
+        box-sizing: border-box;
+        /* border: 1px solid plum; */
+        display: flex;
+        gap: 1px;
+        .pixel{
+            user-select: none;
+            box-sizing: border-box;
+            flex: 1 0 auto;
+            /* border: 1px solid red; */
+            background-color: white;
+        }
+        .pixel:hover{
+            box-sizing: border-box;
+            outline: 1px solid red;
+        }
+    }
+}
