@@ -2,7 +2,7 @@
 body{
     background-color: rgb(54, 54, 54);
     box-sizing: border-box;
-    width: 600px;
+    width: 900px;
     height: 100vh;
     margin: 0 auto;
     /* border: 1px solid blue; */
@@ -13,70 +13,192 @@ body{
 h1{
     color: white;
     font-size: 48px;
+    padding-left: 5px;
 }
 p{
     color: white;
     font-size: 20px;
+    padding-left: 5px;
 }
 
 main{
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     /* border: 1px solid magenta; */
     height: 700px;
-    /* padding: 0; */
+    padding: 0;
+    display: flex;
 }
 
 .controls{
     box-sizing: border-box;
-    border: 1px solid yellow;
-    height: 100px;
-    padding: 10px 0;
-    flex: 0 0 auto;
+    /* border: 1px solid yellow; */
+    height: 600px;
+    width: 280px;
+    padding: 0 5px;
+    /* flex: 0 0 auto; */
     display: flex;
-    gap: 4px;
+    flex-direction: column;
+    gap: 10px;
 
-    .primary-color{
-        background-color: transparent;
-        width: 80px;
-        height: 80px;
-        padding: 0;
-        /* border-radius: 8px; */
-        border: 0;
+    .tool-box{
+        display: flex;
+        /* gap: 8px; */
+        /* justify-content: space-between; */
+        flex-wrap: wrap;
+        height: 225px;
+        align-items: flex-start;
+        /* overflow: auto; */
+        padding: 5px;
+        border: 2px solid rgb(98, 98, 98);
+        border-radius: 4px;
+
+        .tool{
+            /* box-sizing: border-box; */
+            padding: 10px;
+            width: 60px;
+            /* border: 1px solid yellow; */
+            border-radius: 10px;
+            .tool-image{
+                width: 60px;
+                height: 60px;
+                overflow: hidden;
+                border-radius: 40px;
+                border: 2px solid rgba(255, 255, 255, 0.202);
+                box-sizing: border-box;
+                margin: 0 auto;
+                & img{
+                    pointer-events: none;
+                }
+            }
+            .tool-image:hover{
+                border-color: rgba(240, 248, 255, 0.509);
+            }
+            .tool-name{
+                display: block;
+                color: rgb(230, 230, 230);
+                font-size: 18px;
+                text-align: center;
+                width: 100%;
+                /* border: 1px solid green; */
+                /* pointer-events: none; */
+            }
+        }
+        .selected-tool{
+            /* border: 2px solid rgba(255, 255, 255, 0.693); */
+            background-color: rgba(0, 0, 0, 0.282);
+        }
+        #erase-img{
+            scale: 0.8;
+        }
+        #pen-img{
+            margin-left: 10%;
+            margin-top: -10%;
+            scale: 0.8;
+        }
+        #random-img{
+            image-rendering: pixelated;
+            width: 100%;
+            height: 100%;
+            scale: 1.0;
+        }
     }
-    .primary-color::-webkit-color-swatch{
-        border-radius: 40px;
-        border: 2px solid rgba(255, 255, 255, 0.501);
+    
+    .color-box{
+        display: flex;
+        /* gap: 2px; */
+        flex-wrap: wrap;
+        align-items: flex-start;
+        align-content: flex-start;
+        border: 2px solid rgb(98, 98, 98);
+        border-radius: 4px;
+        padding: 5px;
+        height: 200px;
+        overflow-y: auto;
+        
+        .color-container{
+            width: 46px;
+            height: 46px;
+            overflow: hidden;
+            /* border: 1px solid rgba(255, 255, 255, 0.415); */
+            box-sizing: border-box;
+            
+            .primary-color{
+                width: 150%;
+                height: 150%;
+                margin: -25% 25% 25% -25%;
+            }
+        }
+        .color-container:hover{
+            border-color: white;
+        }
+        .selected-color{
+            outline: 2px solid white;
+            outline-offset: -2px;
+        }
     }
+    .icon-img{
+        width: 100%;
+        height: 100%;
+    }
+    
+    
     .pixel-creator-div{
-        box-sizing: border-box;
-        /* outline: 1px solid red; */
-        width: 100px;
-        margin-left: auto;
-
+        width: auto;
+        margin-top: auto;
+        color: white;
+        font-size: 20px;
+        
+        & label{
+            padding-left: 5px;
+        }
+        #gaps{
+            margin-left: 10px;
+        }
+        .image-background-color{
+            margin-bottom: 5px;
+            /* border: 1px solid red; */
+            padding-left: 5px;
+            & div{
+                display: inline-block;
+                margin-left: 15px;
+                border-radius: 5px;
+                width: 90px;
+                height: 30px;
+                overflow: hidden;
+                & input{
+                    position: relative;
+                    width: 150%;
+                    height: 200%;
+                    margin: -20% auto auto -25%;
+                }
+            }
+        }
         #pixel-num{
-            background-color: rgb(104, 104, 105);
+            background-color: rgb(98, 98, 98);
             color: white;
             border-radius: 10px;
-            border: 2px solid rgba(255, 255, 255, 0.289);
-            width: 100%;
+            border: 2px solid gray;
+            width: 45%;
             height: 40px;
             text-align: center;
             font-size: 28px;
-            flex: 0 0 auto;
             box-sizing: border-box;
         }
         .pixel-button{
-            width: 100%;
+            width: 45%;
             height: 40px;
             padding: 0 6px;
             font-size: 28px;
             border-radius: 10px;
+            margin-left: 20px;
+            border: 2px solid gray;
+            background-color: rgb(96, 96, 96);
+            color: white;
+        }
+        #pixel-num:hover, .pixel-button:hover{
+            border: 2px solid rgb(204, 204, 204);
         }
     }
-
-    /* #pixel-num::-webkit-inner-spin-button{
-        -webkit-appearance: none;
-    } */
 }
 
 .pixels{
@@ -84,18 +206,20 @@ main{
     background-color: rgb(172, 172, 172);
     /* border: 1px solid blue; */
     height: 600px;
+    width: 600px;
+    margin: 0 auto;
 
     flex: 0 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1px;
+    gap: 0px;
 
     .pixel-row{
         flex: 1 0 auto;
         box-sizing: border-box;
         /* border: 1px solid plum; */
         display: flex;
-        gap: 1px;
+        gap: inherit;
         .pixel{
             user-select: none;
             box-sizing: border-box;
@@ -106,6 +230,7 @@ main{
         .pixel:hover{
             box-sizing: border-box;
             outline: 1px solid red;
+            outline-offset: -1px;
         }
     }
 }

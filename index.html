@@ -14,12 +14,61 @@
     </div>
     <main>
         <div class="controls">
-            <input id="color1" class="primary-color" type="color" value="#ff0000">
-            <input id="color2" class="primary-color" type="color" value="#00ff00">
-            <input id="color3" class="primary-color" type="color" value="#0000ff">
+            <div class="tool-box">
+                <div class="tool pen">
+                    <div class="tool-image">    <img id="pen-img"      class="icon-img" src="./images/icons8-pencil-80.png"></div>
+                    <span class="tool-name">pen</span>
+                </div>
+                <div class="tool erase">
+                    <div class="tool-image">  <img id="erase-img"    class="icon-img" src="./images/icons8-erase-96.png"></div>
+                    <span class="tool-name">erase</span>
+                </div>
+                <div class="tool random">
+                    <div class="tool-image"> <img id="random-img"   class="icon-img" src="./images/random.png"></div>
+                    <span class="tool-name">random colors</span>
+                </div>
+                <div class="tool darken">
+                    <div class="tool-image"> <img id="darken-img"   class="icon-img" src="./images/icons8-pencil-80(darken).png"></div>
+                    <span class="tool-name">darken</span>
+                </div>
+                <div class="tool lighten">
+                    <div class="tool-image"> <img id="lighten-img"   class="icon-img" src="./images/icons8-pencil-80(lighten).png"></div>
+                    <span class="tool-name">lighten</span>
+                </div>
+                <div class="tool shade">
+                    <div class="tool-image"> <img id="shade-img"   class="icon-img" src="./images/icons8-pencil-80(shade).png"></div>
+                    <span class="tool-name">shade</span>
+                </div>
+            </div>
+            <div class="color-box">
+                <div class="color-container"><input class="primary-color" type="color" value="#212b5e"></div>
+                <div class="color-container"><input class="primary-color" type="color" value="#636fb2"></div>
+                <div class="color-container"><input class="primary-color" type="color" value="#adc4ff"></div>
+                <div class="color-container"><input class="primary-color" type="color" value="#ffffff"></div>
+                <div class="color-container"><input class="primary-color" type="color" value="#ffccd7"></div>
+
+                <div class="color-container"><input class="primary-color" type="color" value="#ff7fbd"></div>
+                <div class="color-container"><input class="primary-color" type="color" value="#872450"></div>
+                <div class="color-container"><input class="primary-color" type="color" value="#e52d40"></div>
+                <div class="color-container"><input class="primary-color" type="color" value="#ef604a"></div>
+                <div class="color-container"><input class="primary-color" type="color" value="#ffd877"></div>
+                
+                <div class="color-container"><input class="primary-color" type="color" value="#00cc8b"></div>
+                <div class="color-container"><input class="primary-color" type="color" value="#005a75"></div>
+                <div class="color-container"><input class="primary-color" type="color" value="#513ae8"></div>
+                <div class="color-container"><input class="primary-color" type="color" value="#19baff"></div>
+                <div class="color-container"><input class="primary-color" type="color" value="#7731a5"></div>
+                
+                <div class="color-container"><input class="primary-color" type="color" value="#b97cff"></div>
+                <div class="color-container"><input class="primary-color" type="color" value="#49a754"></div>
+                
+                <div class="color-container" onclick="add_color(this)"><img class="icon-img" src="./images/bitmap.png"></div>
+            </div>
             <div class="pixel-creator-div">
-            <input type="number" id="pixel-num" min="1" max="64">
-            <button class="pixel-button" onclick="create_pixels()">Clear</button>
+                <label for="gaps">Gap between pixels</label><input id="gaps" type="checkbox"  onclick="gaps_func(this)">
+                <div class="image-background-color">Background color: <div><input id="back-color" type="color" value="#ffffff"></div></div>
+                <input type="number" id="pixel-num" min="1" max="64">
+                <button class="pixel-button" onclick="create_pixels()">Clear</button>
             </div>
         </div>
         <div class="pixels">
